@@ -12,11 +12,12 @@ export class MainPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.budgetItems = [{amount: 123, desc: 'bread'}];
   }
 
 
-  addItem(item) {
+  addItem(item): void {
     this.budgetItems.push(item);
-    console.log(this.budgetItems)
+    console.log(this.budgetItems);
   }
 }

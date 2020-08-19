@@ -1,10 +1,10 @@
 <div class="root">
-  <div class="budget-item" [ngClass]="{'income': item.amount >= 0, 'expense' : item.amount < 0}">
+  <div class="budget-item" (click)="onCardClickEmitter()" [ngClass]="{'income': item.amount >= 0, 'expense' : item.amount < 0}">
     <div class="description">
-      <p>{{item.desc}}</p>
+      <span>{{item.desc}}</span>
     </div>
     <div class="amount">
-      <p>{{item.amount}}</p>
+      <span>{{item.amount}}</span>
     </div>
   </div>
   <div class="x-icon" (click)="deleteItemEmitter()"></div>

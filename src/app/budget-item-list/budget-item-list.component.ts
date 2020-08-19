@@ -10,7 +10,7 @@ import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.compo
 })
 export class BudgetItemListComponent implements OnInit {
 
-  @Input() budgetItems: BudgetItem[];
+  @Input() budgetItems: BudgetItem[] = [];
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -21,8 +21,13 @@ export class BudgetItemListComponent implements OnInit {
     this.budgetItems.splice(index, 1);
   }
 
-  cardClick(item) {
+  cardClick(item): void {
+    console.log(item);
+    
     const index = this.budgetItems.indexOf(item);
-    const dialogRef = this.dialog.open(EditItemModalComponent, { width: '350px', data: item })
+    const dialogRef = this.dialog.open(EditItemModalComponent, { width: '350px', data: item });
+    dialogRef.afterClosed().subscribe(res => {
+      this.budgetItems[index] = res;
+    })
   }
 }

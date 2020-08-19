@@ -22,7 +22,7 @@ export class BudgetItemCardComponent implements OnInit {
     this.deleteItem.emit();
   }
 
-  cardClickEmitter() {
+  onCardClickEmitter(): void {
     this.cardClick.emit();
   }
 }
