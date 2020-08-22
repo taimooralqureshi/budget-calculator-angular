@@ -3,9 +3,7 @@
 </div>
 
 <section class="total-budget-section">
-    <h2>3454</h2>
-    <h2 class="green">3454</h2>
-    <h2 class="red">3454</h2>
+    <h2 [ngClass]="{'green' : balance >= 0 , 'red': balance < 0 }">{{balance |currency}}</h2>
 </section>
 
 <section class="add-item-section">
@@ -16,4 +14,4 @@
 
 <hr style="margin-top: 0;">
 
-<app-budget-item-list [budgetItems]='budgetItems'></app-budget-item-list>
+<app-budget-item-list (deleteItem)="deleteItem($event)" (editItem)="editItem($event)" [budgetItems]='budgetItems'></app-budget-item-list>
