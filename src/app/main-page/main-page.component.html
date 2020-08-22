@@ -11,7 +11,5 @@
     <app-add-item-form style="padding: 20px;" (formItem)="addItem($event)"></app-add-item-form>
   </div>
 </section>
-
 <hr style="margin-top: 0;">
-
 <app-budget-item-list (deleteItem)="deleteItem($event)" (editItem)="editItem($event)" [budgetItems]='budgetItems'></app-budget-item-list>
